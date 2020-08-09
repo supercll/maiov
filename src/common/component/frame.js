@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import "../css/common.css";
+import "../css/reset.css";
+import React, { useState, useRef, useEffect } from 'react';
 import Header from './header';
 import Menu from './Menu';
-import "../css/reset.css";
-import "../css/common.css";
+import { useInnerHeight } from '../hook/index';
+import BScroll from 'better-scroll';
 
 const Frame = (props) => {
     const [showMenu, setShowMenu] = useState(false);
+
+    const innerH = useInnerHeight();
+    const wrap = useRef(null);
+    let pageScroll;
+
     const changeShow = () => {
         setShowMenu(!showMenu);
     };
@@ -13,6 +20,11 @@ const Frame = (props) => {
     const menuHide = () => {
         setShowMenu(false);
     };
+
+
+    useEffect(() => {
+        pageScroll = new BScroll(wrap.current);
+    }, []);
     return (
         <div>
             <Header
@@ -25,12 +37,18 @@ const Frame = (props) => {
                 }}
             />
             <div id="main"
+
                 style={{
-                    transform: `translateX(${showMenu ? 4.5 : 0}rem)`
+                    transform: `translateX(${showMenu ? 4.5 : 0}rem)`,
+                    height: innerH
                 }}
-                onTouchStart = {menuHide}
+                onTouchStart={menuHide}
             >
-                {props.children}
+                <div className="pageWrap" ref={wrap}>
+                    <div>
+                        {props.children}
+                    </div>
+                </div>
             </div>
         </div >
     );

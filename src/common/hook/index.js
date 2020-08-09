@@ -1,6 +1,6 @@
 const useBack = (history) => {
     return () => {
-        console.log(history)
+        console.log(history);
         if (history.length > 1) {
             history.goBack();
         } else {
@@ -9,4 +9,6 @@ const useBack = (history) => {
     };
 };
 
-export { useBack };
+const useInnerHeight = () => window.innerHeight;
+
+export { useBack, useInnerHeight };
