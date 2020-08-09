@@ -38,7 +38,6 @@
 html {
   font-size: 10vw;
 }
-
 body {
   font-family: Helvetica;
   margin: 0;
@@ -79,11 +78,13 @@ h2,
 h3,
 h4,
 ul,
+ol,
 p,
 figure {
   margin: 0;
 }
-ul {
+ul,
+ol {
   list-style: none;
   padding: 0;
 }
