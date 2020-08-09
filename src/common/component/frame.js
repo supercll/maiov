@@ -30,12 +30,7 @@ const Frame = (props) => {
             <Header
                 changeShow={changeShow}
             />
-            <Menu
-                style={{
-                    position: 'relative',
-                    transform: `translateX(${showMenu ? 4.5 : 0}rem)`
-                }}
-            />
+            <Menu />
             <div id="main"
 
                 style={{
