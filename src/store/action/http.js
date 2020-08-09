@@ -1,12 +1,10 @@
-import axios from 'axios';
+import axios from "axios";
 import qs from "qs";
-
-const http = axios.create({
+const HTTP = axios.create({
     baseURL: "/miaov",
-    withCredentials: true,  // 携带cookies
+    withCredentials: true,
     transformRequest: (data) => {
         return qs.stringify(data);
     }
 });
-
-export default http;
+export default HTTP;

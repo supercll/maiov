@@ -1,11 +1,31 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import login from '../../store/action/login';
 
 const LoginBox = (props) => {
-    const [user, setUser] = useState("");
+    const [username, setUser] = useState("");
     const [password, setPassword] = useState("");
     const [vcode, setVcode] = useState("");
     const [vcodeShow, setVcodeShow] = useState(false);
     const [vcodeSrc, setVcodeSrc] = useState("/miaov/user/verify?" + Date.now());
+
+    function toLogin() {
+        console.log(props);
+        props.dispatch(login({
+            verify: vcode,
+            username,
+            password
+        })).then(data => {
+            alert(data.msg);
+            setTimeout(() => {
+                if (data.code !== 0) {
+                    setVcodeSrc("/miaov/user/verify?" + Date.now());
+                } else {
+                    
+                }
+            }, 100);
+        });
+    };
     return (
         <div className="login_box">
             <figure className="user_img">
@@ -16,7 +36,7 @@ const LoginBox = (props) => {
             <div className="login_form">
                 <p>
                     <input type="text" placeholder="用户名"
-                        value={user}
+                        value={username}
                         onChange={(e) => {
                             setUser(e.target.value);
                         }}
@@ -44,12 +64,15 @@ const LoginBox = (props) => {
                     {vcodeShow ? <img className="verify"
                         src={vcodeSrc}
                         onClick={(e) => {
-                            setVcodeSrc("/miaov/user/verify?" + Date.now());
+                            const src = "/miaov/user/verify?" + Date.now();
+                            setVcodeSrc(src);
                         }}
                     /> : ""}
 
                 </p>
-                <button className="form_btn">登录</button>
+                <button className="form_btn"
+                    onClick={toLogin}
+                >登录</button>
                 <p className="form_tip">没有帐号？<a href="#">立即注册</a></p>
             </div>
 
@@ -57,4 +80,4 @@ const LoginBox = (props) => {
     );
 };
 
-export default LoginBox;
+export default connect(res => res)(LoginBox);
