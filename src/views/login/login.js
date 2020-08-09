@@ -33,7 +33,7 @@ const LoginBox = (props) => {
     return (
         <div className="login_box">
             <figure className="user_img">
-                <img src="images/user_img.png" alt="" />
+                <img src={require("../../common/images/user_img.png")} alt="" />
                 <figcaption>如有账号，请直接登录</figcaption>
             </figure>
 
