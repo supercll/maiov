@@ -4,7 +4,7 @@
 }
 @font-face {
   font-family: pingfang;
-  src: url("../font/PingFang\ Bold.ttf");
+  src: url("../font/PingFang_Bold.ttf");
 }
 @font-face {
   font-family: "iconfont";
@@ -35,6 +35,9 @@
 .icon-home:before { content: "\e622"; }
 .icon-mima:before { content: "\e601"; }
 .icon-dengluming:before { content: "\e623"; }
+html {
+  font-size: 10vw;
+}
 body {
   font-family: Helvetica;
   margin: 0;
@@ -75,11 +78,13 @@ h2,
 h3,
 h4,
 ul,
+ol,
 p,
 figure {
   margin: 0;
 }
-ul {
+ul,
+ol {
   list-style: none;
   padding: 0;
 }
