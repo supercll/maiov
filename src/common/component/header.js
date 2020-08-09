@@ -48,7 +48,11 @@ const Header = (props) => {
                             back();
                         }}
                     ></a> :
-                    <a className="header-btn-left iconfont icon-hycaidan"></a>
+                    <a className="header-btn-left iconfont icon-hycaidan"
+                        onClick={() => {
+                            changeShow();
+                        }}
+                    ></a>
                 }
             </nav>
             <h1 className="logo">miaov.com</h1>

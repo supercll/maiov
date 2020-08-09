@@ -11,6 +11,8 @@ const LoginBox = (props) => {
     const [vcodeShow, setVcodeShow] = useState(false);
     const [vcodeSrc, setVcodeSrc] = useState("/miaov/user/verify?" + Date.now());
 
+    const { setDeg } = props;
+
     const back = useBack(props.history);
     const toLogin = () => {
         console.log(props);
@@ -64,6 +66,11 @@ const LoginBox = (props) => {
                         onFocus={() => {
                             setVcodeShow(true);
                         }}
+                        onKeyDown={(e) => {
+                            if (e.keyCode === 13) {
+                                toLogin();
+                            }
+                        }}
                     />
                     {vcodeShow ? <img className="verify"
                         src={vcodeSrc}
@@ -77,7 +84,11 @@ const LoginBox = (props) => {
                 <button className="form_btn"
                     onClick={toLogin}
                 >登录</button>
-                <p className="form_tip">没有帐号？<a href="#">立即注册</a></p>
+                <p className="form_tip">没有帐号？<a href="#"
+                    onClick={() => {
+                        setDeg(-180);
+                    }}
+                >立即注册</a></p>
             </div>
 
         </div>

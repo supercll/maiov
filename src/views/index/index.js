@@ -9,7 +9,7 @@ const Index = (props) => {
             <h1>首页</h1>
             <button
                 onClick={() => {
-                    props.dispatch(login())
+                    props.dispatch(login());
                 }}
             >登陆</button>
         </div>
