@@ -32,8 +32,14 @@ const Frame = (props) => {
             pullUpLoad: pullUp ? { threshold: 200 } : false
         });
         pageScroll.on("pullingUp", () => {
-            getData().then(() => {
-                pageScroll.finishPullUp();
+            getData().then(res => {
+                if (res) {
+                    pageScroll.finishPullUp();
+                    pageScroll.refresh();
+                } else {
+                    pageScroll.closePullUp();
+                }
+
             });
         });
     }, []);
