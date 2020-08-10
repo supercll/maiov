@@ -1,5 +1,4 @@
-import "../css/common.css";
-import "../css/reset.css";
+
 import React, { useState, useRef, useEffect } from 'react';
 import Header from './header';
 import Menu from './Menu';

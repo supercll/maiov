@@ -15,7 +15,11 @@ export default function Tab(props) {
             momentum: false,
             snap: {
                 loop: true
-            }
+            },
+            preventDefaultException: {
+                tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/,
+                className: /(^|\s)work_a(\s|$)/
+            },
         });
         bScroll.on("scrollEnd", () => {
             setNow(bScroll.getCurrentPage().pageX);
