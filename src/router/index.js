@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import routeList from './route_list';
+import {routeList} from './route_list';
 
 const IndexRoute = () => {
     return (
