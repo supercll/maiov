@@ -6,9 +6,5 @@ import good from "./good";
 import messageList from "./messageList"
 export default {
     getUser,
-    works,
-    lecturers,
-    work,
-    good,
-    messageList
+    works
 }

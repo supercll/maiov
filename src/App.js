@@ -6,9 +6,9 @@ import Frame from './common/component/frame';
 function App() {
   return (
     <BrowserRouter>
-      <Frame>
-        <IndexRoute />
-      </Frame>
+      {/* <Frame> */}
+      <IndexRoute />
+      {/* </Frame> */}
     </BrowserRouter>
 
   );
