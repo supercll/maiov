@@ -25,7 +25,7 @@ const Frame = (props) => {
     useEffect(() => {
         pageScroll = new BScroll(wrap.current, {
             preventDefaultException: {
-                tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/,
+                tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A|NAV)$/,
                 className: /(^|\s)work_a(\s|$)/
             },
             pullUpLoad: pullUp ? { threshold: 200 } : false

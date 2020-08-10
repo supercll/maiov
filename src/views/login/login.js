@@ -15,7 +15,7 @@ const LoginBox = (props) => {
 
     const back = useBack(props.history);
     const toLogin = () => {
-        console.log(props);
+        // console.log(props);
         props.dispatch(login({
             verify: vcode,
             username,
@@ -84,7 +84,7 @@ const LoginBox = (props) => {
                 <button className="form_btn"
                     onClick={toLogin}
                 >登录</button>
-                <p className="form_tip">没有帐号？<a href="#"
+                <p className="form_tip">没有帐号？<a
                     onClick={() => {
                         setDeg(-180);
                     }}
