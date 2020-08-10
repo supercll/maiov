@@ -1,8 +1,12 @@
-import "../../common/css/index.css"
+import "../../common/css/index.css";
 
 import React from 'react';
 import { connect } from 'react-redux';
 import Tab from '../../common/component/tabs';
+import CourseList from "./course";
+import Vip from "./vip";
+import Miaov from "./miaov";
+import Works from "./works";
 
 let imgData = [
     require("../../common/images/tab/img1.png"),
@@ -19,6 +23,14 @@ const Index = (props) => {
                     return <img src={data} />;
                 }}
             />
+
+            <section className="index_content">
+                <CourseList />
+                <Vip />
+                <Miaov />
+                <Works />
+            </section>
+
         </div>
     );
 };

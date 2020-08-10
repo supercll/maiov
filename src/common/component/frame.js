@@ -23,7 +23,12 @@ const Frame = (props) => {
 
 
     useEffect(() => {
-        pageScroll = new BScroll(wrap.current);
+        pageScroll = new BScroll(wrap.current, {
+            preventDefaultException: {
+                tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/,
+                className: /(^|\s)work_a(\s|$)/
+            }
+        });
     }, []);
     return (
         <div>
