@@ -94,7 +94,7 @@
 }
 .verify {
   float: left;
-  width: 3.9rem;
+  width: 3.6rem;
 }
 .login_register_box .login_form input[type="password"]:focus {
   background-image: url('../images/icon_lock_focus.png');
