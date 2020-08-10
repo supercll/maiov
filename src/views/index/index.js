@@ -10,7 +10,7 @@ import Works from "./works";
 import Frame from "../../common/component/frame";
 import getWorks from "../../store/action/getWorks";
 
-let imgData = [
+const imgData = [
     require("../../common/images/tab/img1.png"),
     require("../../common/images/tab/img2.png"),
     require("../../common/images/tab/img3.png"),
@@ -20,14 +20,18 @@ const Index = (props) => {
     const [page, setPage] = useState(1);
     const { dispatch } = props;
     const getWorksData = () => {
-        dispatch((getWorks(page)));
+        const p = dispatch((getWorks(page)));
+        return p;
     };
 
     useEffect(() => {
         getWorksData();
-    }, [])
+    }, []);
     return (
-        <Frame>
+        <Frame
+            pullUp={true}
+            getData={getWorksData}
+        >
             <div>
                 <Tab
                     data={imgData}
@@ -39,7 +43,7 @@ const Index = (props) => {
                 <section className="index_content">
                     <CourseList />
                     <Vip />
-                    <Miaov  />
+                    <Miaov />
                     <Works {...props} />
                 </section>
 

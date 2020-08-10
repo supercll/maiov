@@ -4,7 +4,7 @@ export default function getWorks() {
         dispatch({
             type: "LOAD"
         });
-        let { page } = getState().works;
+        const { page } = getState().works;
         return HTTP.post(`/lecturer/lists?page=${page}&rows=8`, {
             order: "desc",
             sort: "sort",

@@ -7,6 +7,7 @@ import { useInnerHeight } from '../hook/index';
 import BScroll from 'better-scroll';
 
 const Frame = (props) => {
+    const { pullUp, getData } = props;
     const [showMenu, setShowMenu] = useState(false);
 
     const innerH = useInnerHeight();
@@ -27,7 +28,13 @@ const Frame = (props) => {
             preventDefaultException: {
                 tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/,
                 className: /(^|\s)work_a(\s|$)/
-            }
+            },
+            pullUpLoad: pullUp ? { threshold: 200 } : false
+        });
+        pageScroll.on("pullingUp", () => {
+            getData().then(() => {
+                pageScroll.finishPullUp();
+            });
         });
     }, []);
     return (
