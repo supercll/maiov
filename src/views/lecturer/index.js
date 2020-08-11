@@ -4,6 +4,7 @@ import "../../common/css/teacher.css";
 import { connect } from "react-redux";
 import getLecturers from "../../store/action/getLecturers";
 import LecturerTab from "./tab";
+import Join from "./join";
 
 const Lecturer = props => {
     const { data, dispatch } = props;
@@ -31,6 +32,7 @@ const Lecturer = props => {
                 </h2>
                 <LecturerTab data={data} newData={newData} />
             </div>
+            <Join />
         </Frame>
     );
 };
