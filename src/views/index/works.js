@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 export default function Works(props) {
     const { data, loadEnd, loading } = props;
@@ -9,7 +9,7 @@ export default function Works(props) {
                 {data.map(item => (
                     <li key={item.id}>
                         <Link to={"/work/" + item.id}>
-                            <img src={item.icon} className="work_a" />
+                            <img src={item.icon} className="work_a" alt="" />
                             <span className="wrork_txt clearfix work_a">
                                 <strong className="work_a">{item.title}</strong>
                                 <span className="work_a">
@@ -21,9 +21,11 @@ export default function Works(props) {
                     </li>
                 ))}
             </ul>
-            <a className="more">{loadEnd ? "没有新的数据了" : (loading ? "正在加载中" : "上滑加载更多")}</a>
+            <a className="more" href>
+                {loadEnd ? "没有新的数据了" : loading ? "正在加载中" : "上滑加载更多"}
+            </a>
             {/* 正在加载中 */}
             {/* 没有新的数据了 */}
         </div>
     );
-};
+}

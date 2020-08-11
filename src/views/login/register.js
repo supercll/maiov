@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import register from "../../store/action/register";
 import { withRouter } from "react-router-dom";
@@ -10,24 +10,27 @@ function RegisterBox(props) {
     const [vcode, setVcode] = useState("");
     const [vcodeShow, setVcodeShow] = useState(false);
     const [vcodeSrc, setVcodeSrc] = useState("/miaov/user/verify?" + Date.now());
-    const back = useBack(props.history);
     const { setDeg } = props;
     function toRegister() {
-        props.dispatch(register({
-            verify: vcode,
-            username: user,
-            password,
-            repassword: password2
-        })).then(data => {
-            alert(data.msg);
-            //console.log(data);
-            setTimeout(() => {
-                if (data.code === 0) {
-                    setDeg(0);
-                }
-                setVcodeSrc("/miaov/user/verify?" + Date.now());
-            }, 100);
-        });
+        props
+            .dispatch(
+                register({
+                    verify: vcode,
+                    username: user,
+                    password,
+                    repassword: password2,
+                })
+            )
+            .then(data => {
+                alert(data.msg);
+                //console.log(data);
+                setTimeout(() => {
+                    if (data.code === 0) {
+                        setDeg(0);
+                    }
+                    setVcodeSrc("/miaov/user/verify?" + Date.now());
+                }, 100);
+            });
     }
     return (
         <div className="register_box">
@@ -76,23 +79,21 @@ function RegisterBox(props) {
                         }}
                         className="verifyCode"
                     />
-                    {vcodeShow ?
-                        <img
-                            className="verify"
-                            src={vcodeSrc}
-
-                        /> : ""}
-
+                    {vcodeShow ? <img className="verify" src={vcodeSrc} /> : ""}
                 </p>
-                <button
-                    className="form_btn"
-                    onClick={toRegister}
-                >马上注册</button>
-                <p className="form_tip">已有帐号？<a
-                    onClick={() => {
-                        setDeg(0);
-                    }}
-                >立即登录</a></p>
+                <button className="form_btn" onClick={toRegister}>
+                    马上注册
+                </button>
+                <p className="form_tip">
+                    已有帐号？
+                    <a
+                        onClick={() => {
+                            setDeg(0);
+                        }}
+                    >
+                        立即登录
+                    </a>
+                </p>
             </div>
         </div>
     );

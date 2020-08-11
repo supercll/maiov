@@ -1,11 +1,13 @@
-import React from 'react';
-import Frame from '../../common/component/frame';
-
-const Work = () => {
+import React, { useEffect, useState } from "react";
+import "../../common/css/miiaov.css";
+import Frame from "../../common/component/frame";
+const Work = props => {
+    // console.log(props);
     return (
-        <Frame>
-            <h1>作品</h1>
-        </Frame>
+        <div>
+            <Frame></Frame>
+            <footer>回复本帖</footer>
+        </div>
     );
 };
 
