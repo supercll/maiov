@@ -12,7 +12,7 @@ const Header = props => {
     const [isBtnShow, setBtnShow] = useState(false);
     useEffect(() => {
         props.dispatch(isLogin());
-    }, [props]);
+    }, []);
     function getUser() {
         if (user) {
             return (

@@ -1,14 +1,13 @@
 import React from "react";
 import Tab from "../../common/component/tabs";
 export default function LecturerTab(props) {
-    const { data, newData, showAlert } = props;
+    let { data, newData, showAlert } = props;
     return data.length < 1 ? (
         ""
     ) : (
         <Tab
             data={newData}
             render={data => {
-                console.log(data);
                 return (
                     <ul className="lecturer_list">
                         {data.map(item => {
