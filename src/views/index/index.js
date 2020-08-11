@@ -6,9 +6,9 @@ import Tab from "../../common/component/tabs";
 import CourseList from "./course";
 import Vip from "./vip";
 import Miaov from "./miaov";
-import Works from "./works";
 import Frame from "../../common/component/frame";
 import getWorks from "../../store/action/getWorks";
+import Footer from "../../common/component/footer";
 
 const imgData = [
     require("../../common/images/tab/img1.png"),
@@ -41,9 +41,9 @@ const Index = props => {
                     <CourseList />
                     <Vip />
                     <Miaov />
-                    <Works {...props} />
                 </section>
             </div>
+            <Footer />
         </Frame>
     );
 };

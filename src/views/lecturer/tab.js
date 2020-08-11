@@ -8,6 +8,7 @@ export default function LecturerTab(props) {
         <Tab
             data={newData}
             render={data => {
+                console.log(data);
                 return (
                     <ul className="lecturer_list">
                         {data.map(item => {
