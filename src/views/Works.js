@@ -4,10 +4,9 @@ import Frame from "../common/component/frame";
 import getWorks from "../store/action/getWorks";
 import { connect } from "react-redux";
 const Works = props => {
-    const [page] = useState(1);
     const { dispatch } = props;
     const getWorksData = () => {
-        const p = dispatch(getWorks(page));
+        const p = dispatch(getWorks());
         return p;
     };
 
@@ -36,7 +35,7 @@ const Works = props => {
                     ))}
                 </ul>
                 <a className="more">
-                    {loadEnd ? "没有新的作品了" : loading ? "正在加载中" : "上滑加载更多"}
+                    {loadEnd ? "没有新的作品了" : loading ? <h3>作品加载中...</h3> : "上滑加载更多"}
                 </a>
                 {/* 正在加载中 */}
                 {/* 没有新的数据了 */}
