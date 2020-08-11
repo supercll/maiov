@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import getLecturers from "../../store/action/getLecturers";
 import LecturerTab from "./tab";
 import Join from "./join";
+import Footer from "../../common/component/footer";
 
 const Lecturer = props => {
     const { data, dispatch } = props;
@@ -33,6 +34,7 @@ const Lecturer = props => {
                 <LecturerTab data={data} newData={newData} />
             </div>
             <Join />
+            <Footer />
         </Frame>
     );
 };
