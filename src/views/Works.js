@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Frame from "../common/component/frame";
 import getWorks from "../store/action/getWorks";
@@ -20,9 +20,12 @@ const Works = props => {
                 <h3>学员作品</h3>
                 <ul className="works_list clearfix">
                     {data.map(item => (
-                        <li key={item.id}>
+                        <li key={item.id} className="lazyImageBox">
                             <Link to={"/works/" + item.id}>
-                                <img src={item.icon} className="work_a" alt="" />
+                                <img
+                                    className="work_a"
+                                    src={item.icon}
+                                />
                                 <span className="wrork_txt clearfix work_a">
                                     <strong className="work_a">{item.title}</strong>
                                     <span className="work_a">
