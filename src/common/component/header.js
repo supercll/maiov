@@ -45,7 +45,7 @@ const Header = props => {
     return (
         <header id="header">
             <nav className="menu">
-                {props.location.pathname === "/login" ? (
+                {props.location.pathname === "/login" || /\d{1}$/.test(props.location.pathname) ? (
                     <a
                         className="header-btn-left iconfont icon-back"
                         onClick={() => {

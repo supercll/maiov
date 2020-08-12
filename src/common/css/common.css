@@ -198,7 +198,7 @@
   background: #999;
 }
 .skeleton .skeleton-row:nth-child(2n) span {
-  animation: skeleton 2s infinite alternate;
+  animation: skeleton 1s infinite alternate;
 }
 .skeleton .skeleton-row:nth-child(2n+1) span {
   animation: skeleton 1.5s .2s infinite alternate;
