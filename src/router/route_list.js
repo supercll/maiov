@@ -65,11 +65,12 @@ const nav = [
         className: "iconfont icon-home",
     },
     {
-        name: "课程安排",
-        path: "/course",
+        name: "学员作品",
+        path: "/works",
         exact: true,
-        className: "iconfont icon-kecheng",
+        className: "iconfont icon-works",
     },
+
     {
         name: "讲师团队",
         path: "/lecturer",
@@ -77,10 +78,10 @@ const nav = [
         className: "iconfont icon-peixunjiangshi",
     },
     {
-        name: "学员作品",
-        path: "/works",
+        name: "课程安排",
+        path: "/course",
         exact: true,
-        className: "iconfont icon-works",
+        className: "iconfont icon-kecheng",
     },
 ];
 

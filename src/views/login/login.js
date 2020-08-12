@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import login from '../../store/action/login';
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import login from "../../store/action/login";
 import { withRouter } from "react-router-dom";
 import { useBack } from "../../common/hook/index";
 
-const LoginBox = (props) => {
+const LoginBox = props => {
     const [username, setUser] = useState("");
     const [password, setPassword] = useState("");
     const [vcode, setVcode] = useState("");
@@ -16,21 +16,25 @@ const LoginBox = (props) => {
     const back = useBack(props.history);
     const toLogin = () => {
         // console.log(props);
-        props.dispatch(login({
-            verify: vcode,
-            username,
-            password
-        })).then(data => {
-            alert(data.msg);
-            setTimeout(() => {
-                if (data.code !== 0) {
-                    setVcodeSrc("/miaov/user/verify?" + Date.now());
-                    setVcode("");
-                } else {
-                    back();
-                }
-            }, 100);
-        });
+        props
+            .dispatch(
+                login({
+                    verify: vcode,
+                    username,
+                    password,
+                })
+            )
+            .then(data => {
+                alert(data.msg);
+                setTimeout(() => {
+                    if (data.code !== 0) {
+                        setVcodeSrc("/miaov/user/verify?" + Date.now());
+                        setVcode("");
+                    } else {
+                        back();
+                    }
+                }, 100);
+            });
     };
     return (
         <div className="login_box">
@@ -41,56 +45,70 @@ const LoginBox = (props) => {
 
             <div className="login_form">
                 <p>
-                    <input type="text" placeholder="用户名"
+                    <input
+                        type="text"
+                        placeholder="用户名"
                         value={username}
-                        onChange={(e) => {
+                        onChange={e => {
                             setUser(e.target.value);
                         }}
                     />
                 </p>
 
                 <p>
-                    <input type="password" placeholder="请输入密码"
+                    <input
+                        type="password"
+                        placeholder="请输入密码"
                         value={password}
-                        onChange={(e) => {
+                        onChange={e => {
                             setPassword(e.target.value);
                         }}
                     />
                 </p>
                 <p className="clearfix">
-                    <input type="text" placeholder="验证码" className="verifyCode"
+                    <input
+                        type="text"
+                        placeholder="验证码"
+                        className="verifyCode"
                         value={vcode}
-                        onChange={(e) => {
+                        onChange={e => {
                             setVcode(e.target.value);
                         }}
                         onFocus={() => {
                             setVcodeShow(true);
                         }}
-                        onKeyDown={(e) => {
+                        onKeyDown={e => {
                             if (e.keyCode === 13) {
                                 toLogin();
                             }
                         }}
                     />
-                    {vcodeShow ? <img className="verify"
-                        src={vcodeSrc}
-                        onClick={(e) => {
-                            const src = "/miaov/user/verify?" + Date.now();
-                            setVcodeSrc(src);
-                        }}
-                    /> : ""}
-
+                    {vcodeShow ? (
+                        <img
+                            className="verify"
+                            src={vcodeSrc}
+                            onClick={e => {
+                                setVcodeSrc("/miaov/user/verify?" + Date.now());
+                            }}
+                        />
+                    ) : (
+                        ""
+                    )}
                 </p>
-                <button className="form_btn"
-                    onClick={toLogin}
-                >登录</button>
-                <p className="form_tip">没有帐号？<a
-                    onClick={() => {
-                        setDeg(-180);
-                    }}
-                >立即注册</a></p>
+                <button className="form_btn" onClick={toLogin}>
+                    登录
+                </button>
+                <p className="form_tip">
+                    没有帐号？
+                    <a
+                        onClick={() => {
+                            setDeg(-180);
+                        }}
+                    >
+                        立即注册
+                    </a>
+                </p>
             </div>
-
         </div>
     );
 };

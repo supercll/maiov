@@ -5,7 +5,7 @@ export default function isLogin(data) {
             if (res.data.code === 0) {
                 dispatch({
                     type: "LOGIN",
-                    user: res.data.username
+                    user: res.data.username,
                 });
             }
         });
