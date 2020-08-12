@@ -29,7 +29,7 @@ const Work = props => {
     return (
         <div>
             <Frame pullUp={true} getData={getMessageData}>
-                {loading ? <Skeleton /> : <Main data={data} />}
+                {loading ? <Skeleton /> : <Main data={data} setShow={setShow} />}
             </Frame>
             <footer
                 className="miiapv_footer"

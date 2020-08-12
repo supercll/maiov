@@ -5,7 +5,6 @@ import day from "dayjs";
     1小时内 :  "n分钟之前", // 3600000
     1天内 :  "n小时之前", // 24*3600000 = 86400000
     1周内 :  "n天之前",//  86400000*7 =  
-    time
 */
 const ToDate = props => {
     let { time } = props;

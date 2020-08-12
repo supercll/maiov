@@ -4,9 +4,15 @@ import Article from "./article";
 import Good from "./good";
 import MessageList from "./messsageList";
 export default function Main(props) {
-    let { data } = props;
+    const { data, setShow } = props;
     return (
-        <div className="workDetails">
+        <div
+            className="workDetails"
+            onTouchStart={() => {
+                console.log(1111111);
+                setShow(false);
+            }}
+        >
             <Tab data={data.image_path.map(item => item.path)} render={src => <img src={src} />} />
             <div className="miiaov_box">
                 <Article data={data} />

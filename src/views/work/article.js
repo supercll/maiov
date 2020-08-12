@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 export default function Article(props) {
-    let { data } = props;
+    let { data, setShow } = props;
     let wrap = useRef(null);
     useEffect(() => {
         let imgs = wrap.current.querySelectorAll("img");
@@ -11,7 +11,11 @@ export default function Article(props) {
         });
     }, [data]);
     return (
-        <article className="miiaov_article" ref={wrap}>
+        <article
+            className="miiaov_article"
+            ref={wrap}
+
+        >
             <h3>{data.title}</h3>
             <div
                 className="miiaov_txt"
