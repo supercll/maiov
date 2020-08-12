@@ -21,7 +21,7 @@ const Works = props => {
                 <ul className="works_list clearfix">
                     {data.map(item => (
                         <li key={item.id}>
-                            <Link to={"/work/" + item.id}>
+                            <Link to={"/works/" + item.id}>
                                 <img src={item.icon} className="work_a" alt="" />
                                 <span className="wrork_txt clearfix work_a">
                                     <strong className="work_a">{item.title}</strong>

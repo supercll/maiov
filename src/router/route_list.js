@@ -33,7 +33,7 @@ const routeList = [
     },
     {
         name: "作品详情",
-        path: "/work",
+        path: "/works/:id",
         exact: true,
         render(props) {
             return <Work {...props} />;

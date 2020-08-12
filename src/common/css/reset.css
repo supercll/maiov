@@ -35,13 +35,16 @@
 .icon-home:before { content: "\e622"; }
 .icon-mima:before { content: "\e601"; }
 .icon-dengluming:before { content: "\e623"; }
+.icon-works:before{ content: "\e650"; }
 html {
   font-size: 10vw;
+  margin: 0 auto;
 }
 body {
   font-family: Helvetica;
   margin: 0;
   color: #000;
+  max-width: 480px;
 }
 body * {
   -webkit-text-size-adjust: 100%;

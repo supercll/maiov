@@ -6,7 +6,7 @@ const Work = props => {
     return (
         <div>
             <Frame></Frame>
-            <footer>回复本帖</footer>
+            <footer className="miiapv_footer">回复本帖</footer>
         </div>
     );
 };
