@@ -1,4 +1,4 @@
-const useBack = (history) => {
+const useBack = history => {
     return () => {
         // console.log(history);
         if (history.length > 1) {

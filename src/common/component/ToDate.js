@@ -7,7 +7,7 @@ import day from "dayjs";
     1周内 :  "n天之前",//  86400000*7 =  
     time
 */
-function ToDate(props) {
+const ToDate = props => {
     let { time } = props;
     let nowTime = Date.now();
     let newTime = new Date(time).getTime();
@@ -22,6 +22,6 @@ function ToDate(props) {
     } else if (disTime < 604800000) {
         return parseInt(disTime / 86400000) + "天之前";
     }
-    return day(time).format("YYYY年M月D日H时");
-}
+    return day(time).format("YYYY年M月D日H时m分");
+};
 export default ToDate;

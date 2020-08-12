@@ -13,7 +13,7 @@ const Header = props => {
     useEffect(() => {
         props.dispatch(isLogin());
     }, []);
-    function getUser() {
+    const getUser = () => {
         if (user) {
             return (
                 <span className="header-btn-right">
@@ -41,7 +41,7 @@ const Header = props => {
         }
 
         return path === "/login" ? "" : <Link className="user" to="/login" />;
-    }
+    };
     return (
         <header id="header">
             <nav className="menu">
