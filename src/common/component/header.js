@@ -48,14 +48,14 @@ const Header = props => {
                 {props.location.pathname === "/login" || /\d{1}$/.test(props.location.pathname) ? (
                     <a
                         className="header-btn-left iconfont icon-back"
-                        onClick={() => {
+                        onTouchStart={() => {
                             back();
                         }}
                     ></a>
                 ) : (
                     <a
                         className="header-btn-left iconfont icon-hycaidan"
-                        onClick={() => {
+                        onTouchStart={() => {
                             changeShow();
                         }}
                     ></a>
